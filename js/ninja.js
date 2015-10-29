@@ -12,15 +12,25 @@ function nextStep(selectedVal)
 
 
     nextStepStr = (currentStep + 1) + "";
+    var query = getQueryParams(document.location.search);
 
-    if (currentStep == 0)
-    {
-        nextUrl = "step" + nextStepStr + ".html" + "?q" + currentStep + "=" + selectedVal;
-    }
-    else
+    if (query.referral)
     {
         nextUrl = "step" + nextStepStr + ".html" + currentParams + "&q" + currentStep + "=" + selectedVal;
     }
+    else
+    {
+        if (currentStep == 0)
+        {
+            nextUrl = "step" + nextStepStr + ".html" + "?q" + currentStep + "=" + selectedVal;
+        }
+        else
+        {
+            nextUrl = "step" + nextStepStr + ".html" + currentParams + "&q" + currentStep + "=" + selectedVal;
+        }
+    }
+
+
 
 
     this.location = nextUrl;
@@ -40,8 +50,8 @@ function computeTotal()
     q4 = {0: 200    , 1: 0      , 2: 200};
     q5 = {0: 200    , 1: 0      , 2: 200};
     q6 = {0: 200    , 1: 0      , 2: 200};
-    q7 = {0: 0      , 1: 500    , 2: 250};
-    q8 = {0: 0      , 1: 10     , 2: 150    , 3:300};
+    q7 = {0: 0      , 1: 10     , 2: 150    , 3:300};
+    q8 = {0: 0      , 1: 500    , 2: 250};
 
     price_0 = q0[parseInt(query.q0)];
     price_1 = q1[parseInt(query.q1)];
@@ -52,7 +62,6 @@ function computeTotal()
     price_6 = q6[parseInt(query.q6)];
     price_7 = q7[parseInt(query.q7)];
     price_8 = q7[parseInt(query.q8)];
-
 
     total = price_0 + price_1 + price_2 + price_3 + price_4 + price_5 + price_6 + price_7 + price_8;
 
@@ -73,4 +82,37 @@ function getQueryParams(qs) {
     }
 
     return params;
+}
+
+
+function goToHome()
+{
+
+    var query = getQueryParams(document.location.search);
+
+    if (query.referral)
+    {
+        this.location = "index.html?referral=" + query.referral;
+    }
+    else
+    {
+        this.location = "index.html";
+    }
+    
+}
+
+function start()
+{
+
+    var query = getQueryParams(document.location.search);
+
+    if (query.referral)
+    {
+        this.location = "step0.html?referral=" + query.referral;
+    }
+    else
+    {
+        this.location = "step0.html";
+    }
+    
 }
