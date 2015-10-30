@@ -59,7 +59,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="javascript:history.back()" style="color: #000">Indietro</a>
+                        
                     </li>
                 </ul>
             </div>
@@ -73,76 +73,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">La tua app</h2>
-                    <h2 class="text-primary" id="totalPriceTag">(?) euro + IVA / 30 gg. lavorativi</h2>
-                    <p><i><small><font color="white">Il presente preventivo è a titolo informativo.<br>A valle del contatto personale, seguirà una ulteriore analisi dei requisiti.</font></small></i></p>
-                    <script>
-                    var total = computeTotal();
-                    var low = total / (1.30);
-                    var high = total * (1.30)
-                    document.getElementById("totalPriceTag").innerHTML = "Prezzo compreso tra <br> <font color='white'>" + low.toFixed(0) + ".00 €</font> e <font color='white'>" + high.toFixed(0)  + ".00 €</font> + IVA <br> entro <font color=white>20-40</font> giorni lavorativi";
-
-                    function sendRequest()
-                    {
-
-                        var nome = $('#nome').val();
-                        var cognome = $('#cognome').val();
-                        var telefono = $('#telefono').val();
-                        var email = $('#email').val();
-
-                        Parse.initialize("A9G9p2x8g17QqdmOAGg3u7lJ70fDbv4Y2J7JOPa0", "XjXoi9rBtyoNPQMH0E910xkl1PwPUv0siGj5ABrV");
-
-                        var Request = Parse.Object.extend("Request");
-                        var request = new Request();
-
-                        request.set("ans", this.location.href);
-                        request.set("email", email);
-                        request.set("telefono", telefono);
-                        request.set("nome", nome);
-                        request.set("cognome", cognome);
-                        request.set("total", computeTotal());
-
-                        request.save(null, {
-                          success: function(gameScore) {
-                            // Execute any logic that should take place after the object is saved.
-                            alert('Richiesta inviata correttamente!');
-                            window.location = "end.html";
-                          },
-                          error: function(gameScore, error) {
-                            // Execute any logic that should take place if the save fails.
-                            // error is a Parse.Error with an error code and message.
-                            alert('Errore.');
-                          }
-                        });                        
-
-
-                    }
-
-                    </script>
+                    <br>
+                    <br>
+                    <br>
+                    <h1 class="section-heading">Ti ricontattiamo presto!</h2>
+                    <h2>Grazie!</h2>
+                    <br>
+                    <br>
+                    <br>
                     <br>
 
-
-                    <div class="row">
-                      <div class="col-md-4"></div>
-                      <div class="col-md-4">
-                        <form id="theForm">
-                            <p><input class="form-control input-lg" type="text" id="nome" name="nome" placeholder="nome"></p>
-                            <p><input class="form-control input-lg" type="text" id="cognome" name="cognome" placeholder="cognome"></p>
-                            <p><input class="form-control input-lg" type="text" id="telefono" name="telefono" placeholder="telefono"></p>
-                            <p><input class="form-control input-lg" type="text" id="email" name="email" placeholder="e-mail"></p>
-
-                        </form>
-                      </div>
-                      <div class="col-md-4"></div>
-                    </div>
-
                     <br>
-                    <a href="javascript:sendRequest()" class="page-scroll btn btn-xl" style="color:#000">Ottieni un preventivo completo in 60 minuti</a>                
+                    <br>
+                    <br>
                 </div>
             </div>
-            
-
-            </div>
+        
         </div>
     </section>
 
