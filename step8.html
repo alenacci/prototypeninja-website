@@ -77,7 +77,7 @@
                     <h2 class="text-primary" id="totalPriceTag">(?) euro + IVA / 30 gg. lavorativi</h2>
                     <p><i><small><font color="white">Il presente preventivo è a titolo informativo.<br>A valle del contatto personale, seguirà una ulteriore analisi dei requisiti.</font></small></i></p>
                     <script>
-                    var total = computeTotal();
+                    var total = computeTotal() * 1.30;
                     var low = (total / (1.30)) / 100;
                     var high = (total * (1.30)) / 100;
                     document.getElementById("totalPriceTag").innerHTML = "Costi di realizzazione compresi tra € <br> <font color='white'>" + low.toFixed(0) + "00.00</font> e €<font color='white'>" + high.toFixed(0)  + "00.00</font> + IVA <br> Tempi di consegna in <font color=white>20-40</font> giorni lavorativi";
