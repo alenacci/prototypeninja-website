@@ -51,7 +51,7 @@ function computeTotal()
 	q5 = {0: 1000   , 1: 0      , 2: 1000};
 	q6 = {0: 200    , 1: 0      , 2: 200};
 	q7 = {0: 500    , 1: 1000   , 2: 1250    , 3:1750};
-	//q8 = {0: 0      , 1: 4000    , 2: 4000};
+	q8 = {0: 0      , 1: 12500  , 2: 12500};
 
     price_0 = q0[parseInt(query.q0)];
     price_1 = q1[parseInt(query.q1)];
@@ -61,13 +61,20 @@ function computeTotal()
     price_5 = q5[parseInt(query.q5)];
     price_6 = q6[parseInt(query.q6)];
     price_7 = q7[parseInt(query.q7)];
-    //price_8 = q7[parseInt(query.q8)];
+    price_8 = q8[parseInt(query.q8)];
 
-    total = price_0 + price_1 + price_2 + price_3 + price_4 + price_5 + price_6 + price_7;// + price_8;
+
+    total = price_0 + price_1 + price_2 + price_3 + price_4 + price_5 + price_6 + price_7 + price_8;
 
     return total;
     
 
+}
+
+function euro(n) {
+  n = parseFloat(n);
+  Math.round(n * 100) / 100;
+  return n.toFixed(2).replace('.',',');    
 }
 
 function getQueryParams(qs) {
