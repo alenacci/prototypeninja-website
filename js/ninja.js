@@ -70,7 +70,7 @@ function computeTotal()
 
     if (parseInt(query.q0) == 0)
     {
-        total = total / 10;
+        total = total / 7;
     }
 
     return total;
