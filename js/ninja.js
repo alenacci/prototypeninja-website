@@ -43,17 +43,17 @@ function computeTotal()
 
     var query = getQueryParams(document.location.search);
 
-	q0 = {0: 500    , 1: 500    , 2: 1000};
-	q1 = {0: 500    , 1: 1000   , 2: 0      , 3: 1000};
-	q2 = {0: 500    , 1: 0      , 2: 500};
-	q3 = {0: 0      , 1: 500    , 2: 0      , 3:250};
-	q4 = {0: 1000   , 1: 250    , 2: 1000};
-	q5 = {0: 1000   , 1: 0      , 2: 1000};
-	q6 = {0: 200    , 1: 0      , 2: 200};
-	q7 = {0: 500    , 1: 1000   , 2: 1250    , 3:1750};
-	q8 = {0: 0      , 1: 12500  , 2: 12500};
+	
+    q1 = {0: 500    , 1: 500    , 2: 1000};
+	q2 = {0: 500    , 1: 1000   , 2: 0      , 3: 1000};
+	q3 = {0: 500    , 1: 0      , 2: 500};
+	q4 = {0: 0      , 1: 500    , 2: 0      , 3:250};
+	q5 = {0: 1000   , 1: 250    , 2: 1000};
+	q6 = {0: 1000   , 1: 0      , 2: 1000};
+	q7 = {0: 200    , 1: 0      , 2: 200};
+	q8 = {0: 500    , 1: 1000   , 2: 1250    , 3:1750};
+	q9 = {0: 0      , 1: 12500  , 2: 12500};
 
-    price_0 = q0[parseInt(query.q0)];
     price_1 = q1[parseInt(query.q1)];
     price_2 = q2[parseInt(query.q2)];
     price_3 = q3[parseInt(query.q3)];
@@ -62,9 +62,16 @@ function computeTotal()
     price_6 = q6[parseInt(query.q6)];
     price_7 = q7[parseInt(query.q7)];
     price_8 = q8[parseInt(query.q8)];
+    price_9 = q9[parseInt(query.q9)];
 
 
-    total = price_0 + price_1 + price_2 + price_3 + price_4 + price_5 + price_6 + price_7 + price_8;
+
+    total = price_1 + price_2 + price_3 + price_4 + price_5 + price_6 + price_7 + price_8  + price_9;
+
+    if (parseInt(query.q0) == 0)
+    {
+        total = total / 10;
+    }
 
     return total;
     
