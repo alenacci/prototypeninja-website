@@ -92,6 +92,30 @@
                         var telefono = $('#telefono').val();
                         var email = $('#email').val();
 
+                        if (nome.length == 0)
+                        {
+                            alert("Devi inserire il nome.")
+                            return
+                        }
+
+                        if (cognome.length == 0)
+                        {
+                            alert("Devi inserire il cognome.")
+                            return
+                        }
+
+                        if (telefono.length == 0)
+                        {
+                            alert("Devi inserire il telefono.")
+                            return
+                        }
+
+                        if (email.length == 0)
+                        {
+                            alert("Devi inserire l'inidirizzo e-mail.")
+                            return
+                        }
+
                         Parse.initialize("A9G9p2x8g17QqdmOAGg3u7lJ70fDbv4Y2J7JOPa0", "XjXoi9rBtyoNPQMH0E910xkl1PwPUv0siGj5ABrV");
 
                         var Request = Parse.Object.extend("Request");
